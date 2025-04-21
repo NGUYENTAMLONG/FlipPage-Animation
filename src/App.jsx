@@ -1,16 +1,14 @@
 import Flipbook from "./components/Flipbook"
+import FlipPhoto from "./components/FlipPhoto"
 
 
 function App() {
 
   return (
-    <>
-    <div>
-
-      <Flipbook/>
-
+    <div className="overflow-hidden">
+      {/* <Flipbook/> */}
+      <FlipPhoto/>
     </div>
-    </>
   )
 }
 
