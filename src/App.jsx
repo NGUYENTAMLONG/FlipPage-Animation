@@ -1,15 +1,35 @@
-import Flipbook from "./components/Flipbook"
-import FlipPhoto from "./components/FlipPhoto"
-
+import { useEffect } from "react";
+import "./App.css";
+import { drawSvgOnScroll } from "./drawSvg";
 
 function App() {
+  useEffect(() => {
+    const path = document.querySelector(".animated-path");
+    if (path) {
+      drawSvgOnScroll(path, ".svg-container");
+    }
+  }, []);
 
   return (
-    <div className="overflow-hidden">
-      {/* <Flipbook/> */}
-      <FlipPhoto/>
+    <div className="">
+      <div className="svg-container">
+        <svg
+          width="967"
+          height="3114"
+          viewBox="0 0 967 3114"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="animated-path"
+            d="M501 2C255.258 384.115 817.942 448.093 719 726.5C611 1030.39 97.7908 832.624 4.99893 1141.5C-42.6702 1300.18 806.744 1343.24 909 1451.5C1011.26 1559.76 1038.5 1859.94 371 1690.5C-296.496 1521.06 199.43 2557.93 909 1944C1217.53 1677.06 -113.284 2002.94 142.5 2538C260.697 2785.25 782.231 2399.01 832 2668.5C874.569 2899.01 427 3111.5 427 3111.5"
+            stroke="#BBA085"
+            strokeWidth="10"
+          />
+        </svg>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
